@@ -458,3 +458,21 @@ document.addEventListener('keydown', (e) => {
 });
 
 renderMainMenu();
+// --- AVISO DE COOKIES (RGPD) ---
+if (!localStorage.getItem('cookiesAceptadas')) {
+  const banner = document.createElement('div');
+  banner.className = "fixed bottom-0 left-0 w-full bg-slate-900 text-white p-4 text-center z-50 text-sm md:text-base border-t border-slate-700 shadow-2xl animate-fade-in flex flex-col md:flex-row justify-center items-center gap-4";
+  banner.innerHTML = `
+    <p>Usamos cookies propias y de terceros (Google AdSense) para personalizar anuncios y analizar el tráfico. Si continúas navegando, consideramos que aceptas su uso.</p>
+    <div class="flex gap-3 shrink-0">
+      <button id="btn-aceptar-cookies" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-xl transition-colors">Aceptar</button>
+      <a href="/legal.html#cookies" class="bg-slate-700 hover:bg-slate-600 text-white py-2 px-4 rounded-xl transition-colors text-sm flex items-center">Leer más</a>
+    </div>
+  `;
+  document.body.appendChild(banner);
+  
+  document.getElementById('btn-aceptar-cookies').addEventListener('click', () => {
+    localStorage.setItem('cookiesAceptadas', 'true');
+    banner.remove();
+  });
+}
