@@ -5,7 +5,7 @@ export const titulosTemas = {
   tema3: "Tema 3: Circulación de armas y revistas",
   tema4: "Tema 4: Documentación y titularidad",
   tema5: "Tema 5: Régimen sancionador e infracciones",
-  tema6: "Tema 6: Conservación y limpieza",
+  tema6: "Tema 6: Reparación , pruebas y de positos de armas",
   tema7: "Tema 7: Medidas de seguridad"
 };
 // Exportamos las preguntas para poder usarlas en main.js
