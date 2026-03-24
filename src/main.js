@@ -6,7 +6,7 @@ import { preguntasTema, titulosTemas } from './data/preguntas.js';
 let esDonante = localStorage.getItem('esDonante') === 'true';
 
 function renderBotonDonar() {
-  const paypalLink = "https://paypal.me/TESTARMAS "; // <-- PON TU LINK AQUÍ
+  const paypalLink = "https://paypal.me/TESTARMAS"; // <-- PON TU LINK AQUÍ
   
   return `
     <div class="flex flex-col items-center justify-center my-10 p-8 bg-slate-50 dark:bg-slate-900/50 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-inner">
