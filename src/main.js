@@ -5,18 +5,10 @@ import { preguntasTema, titulosTemas } from './data/preguntas.js';
 // --- 1. SISTEMA DE ANUNCIOS Y DONACIONES ---
 let esDonante = localStorage.getItem('esDonante') === 'true';
 
-/*function renderAnuncio(id) {
-  if (esDonante) return ''; 
-  return `
-    <div class="my-4 p-4 bg-gray-50 dark:bg-slate-900/40 border-2 border-dashed border-gray-200 dark:border-slate-700 rounded-xl text-center">
-      <span class="text-[10px] uppercase tracking-widest text-gray-400 block mb-2 font-bold">Publicidad</span>
-      <div id="${id}" class="min-h-[90px] flex items-center justify-center text-gray-400 italic text-sm">
-        Espacio para Google AdSense
-      </div>
-    </div>
-  `;
+function renderAnuncio(id) {
+  // Función vacía para que la web no de error, pero no pinte nada
+  return ''; 
 }
-*/ 
 // --- 2. LÓGICA MODO OSCURO ---
 const themeToggleBtn = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
