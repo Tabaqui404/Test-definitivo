@@ -5,41 +5,10 @@ import { preguntasTema, titulosTemas } from './data/preguntas.js';
 // --- 1. SISTEMA DE ANUNCIOS Y DONACIONES ---
 let esDonante = localStorage.getItem('esDonante') === 'true';
 
-<<<<<<< HEAD
-function renderBotonDonar(tipo = 'grande') {
-  const paypalLink = "https://paypal.me/TESTARMAS";
-  
-  // OPCIÓN MINI (Para el encabezado/menú)
-  if (tipo === 'mini') {
-    return `
-      <a href="${paypalLink}" target="_blank" class="flex items-center gap-2 bg-[#0070ba] hover:bg-[#005ea6] text-white px-3 py-1.5 rounded-lg text-xs font-bold transition-all shadow-md">
-        <span>☕</span>
-        <span class="hidden sm:inline">Quitar Publicidad</span>
-      </a>
-    `;
-  }
-
-  // OPCIÓN GRANDE (Para el final del examen)
-=======
 function renderAnuncio(id) {
-  if (esDonante) return ''; 
->>>>>>> parent of 92debcc (Update main.js)
-  return `
-    <div class="flex flex-col items-center justify-center my-10 p-8 bg-slate-50 dark:bg-slate-900/50 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-inner w-full">
-      <p class="text-sm text-slate-500 dark:text-slate-400 mb-5 font-medium text-center">
-        ¿Te ha servido para el examen? Invítame a un café para mantener la web.
-      </p>
-      <a href="${paypalLink}" target="_blank" class="flex items-center justify-center gap-3 bg-[#0070ba] hover:bg-[#005ea6] text-white px-8 py-4 rounded-2xl font-bold transition-all transform hover:scale-[1.02] shadow-xl w-full max-w-xs">
-        <span>Pagar con PayPal</span>
-      </a>
-      <span class="mt-4 text-[10px] text-slate-400 uppercase tracking-widest font-semibold">Seguro • Rápido • Sin registro</span>
-    </div>
-  `;
+  // Función vacía para que la web no de error, pero no pinte nada
+  return ''; 
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> parent of 92debcc (Update main.js)
 // --- 2. LÓGICA MODO OSCURO ---
 const themeToggleBtn = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
