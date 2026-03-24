@@ -112,11 +112,11 @@ function renderMainMenu() {
         
         <button id="btn-examen" class="p-6 bg-red-600 text-white rounded-xl hover:bg-red-700 transition-all font-semibold shadow-lg hover:shadow-red-500/30 transform hover:-translate-y-1">
           <div class="text-3xl mb-2">🎯</div>
-          Simulacro Oficial
+          Simulacro de Examen
           <div class="text-xs font-normal mt-1 opacity-80">20 preg. | 20 min. | Mín: 16</div>
         </button>
 
-        <button id="btn-fallos" class="p-6 bg-amber-500 text-white rounded-xl hover:bg-amber-600 transition-all font-semibold shadow-lg hover:shadow-amber-500/30 transform hover:-translate-y-1 relative ${numFallos === 0 ? 'opacity-50 cursor-not-allowed' : ''}" ${numFallos === 0 ? 'disabled' : ''}>
+        <button id="btn-fallos" class="p-6 bg-amber-500 text-white rounded-xl hover:bg-amber-600 transition-all font-semibold shadow-lg hover:shadow-amber-500/30 transform hover:-translate-y-1 relative ${numFallos === 0 ? 'opacity-50 grayscale cursor-not-allowed' : ''}" ${numFallos === 0 ? 'disabled' : ''}>
           <div class="absolute -top-3 -right-3 bg-red-600 text-white text-sm font-bold w-8 h-8 flex items-center justify-center rounded-full border-2 border-white dark:border-slate-800 shadow-sm">
             ${numFallos}
           </div>
@@ -221,7 +221,7 @@ function renderizarPreguntaExamen() {
     <div class="max-w-3xl mx-auto animate-fade-in">
       <div class="flex flex-wrap gap-3 justify-between items-center mb-6">
         <span class="text-sm font-bold text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-900/30 py-1.5 px-4 rounded-full border border-red-200 dark:border-red-800">
-          SIMULACRO OFICIAL - Pregunta ${preguntaActual + 1} de ${preguntasActivas.length}
+          SIMULACRO DE EXAMEN - Pregunta ${preguntaActual + 1} de ${preguntasActivas.length}
         </span>
         <div class="flex gap-4 items-center">
             <div class="font-mono text-xl font-bold bg-gray-200 dark:bg-slate-700 px-3 py-1 rounded-lg" id="timer-display">
