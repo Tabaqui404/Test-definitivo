@@ -5,6 +5,7 @@ import { preguntasTema, titulosTemas } from './data/preguntas.js';
 // --- 1. SISTEMA DE ANUNCIOS Y DONACIONES ---
 let esDonante = localStorage.getItem('esDonante') === 'true';
 
+<<<<<<< HEAD
 function renderBotonDonar(tipo = 'grande') {
   const paypalLink = "https://paypal.me/TESTARMAS";
   
@@ -19,6 +20,10 @@ function renderBotonDonar(tipo = 'grande') {
   }
 
   // OPCIÓN GRANDE (Para el final del examen)
+=======
+function renderAnuncio(id) {
+  if (esDonante) return ''; 
+>>>>>>> parent of 92debcc (Update main.js)
   return `
     <div class="flex flex-col items-center justify-center my-10 p-8 bg-slate-50 dark:bg-slate-900/50 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-inner w-full">
       <p class="text-sm text-slate-500 dark:text-slate-400 mb-5 font-medium text-center">
@@ -31,6 +36,10 @@ function renderBotonDonar(tipo = 'grande') {
     </div>
   `;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 92debcc (Update main.js)
 // --- 2. LÓGICA MODO OSCURO ---
 const themeToggleBtn = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
