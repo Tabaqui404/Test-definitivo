@@ -5,7 +5,7 @@ import { preguntasTema, titulosTemas } from './data/preguntas.js';
 // --- 1. SISTEMA DE ANUNCIOS Y DONACIONES ---
 let esDonante = localStorage.getItem('esDonante') === 'true';
 
-function renderAnuncio(id) {
+/*function renderAnuncio(id) {
   if (esDonante) return ''; 
   return `
     <div class="my-4 p-4 bg-gray-50 dark:bg-slate-900/40 border-2 border-dashed border-gray-200 dark:border-slate-700 rounded-xl text-center">
@@ -16,7 +16,7 @@ function renderAnuncio(id) {
     </div>
   `;
 }
-
+*/ 
 // --- 2. LÓGICA MODO OSCURO ---
 const themeToggleBtn = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
