@@ -5,37 +5,29 @@ import { preguntasTema, titulosTemas } from './data/preguntas.js';
 // --- 1. SISTEMA DE ANUNCIOS Y DONACIONES ---
 let esDonante = localStorage.getItem('esDonante') === 'true';
 
-// Esta función DEBE existir para que la web no de error, aunque no quieras anuncios ahora
-function renderAnuncio(id) {
-  return ''; 
-}
-
-function renderBotonDonar() {
-  const paypalLink = "https://paypal.me/TESTARMAS"; // He quitado el espacio final
+function renderBotonDonar(tipo = 'grande') {
+  const paypalLink = "https://paypal.me/TESTARMAS";
   
-  return `
-    <div class="flex flex-col items-center justify-center my-10 p-8 bg-slate-50 dark:bg-slate-900/50 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-inner">
-      <p class="text-sm text-slate-500 dark:text-slate-400 mb-5 font-medium">
-        ¿Te hemos ayudado a preparar el examen?
-      </p>
-      
-      <a href="${paypalLink}" 
-         target="_blank" 
-         rel="noopener noreferrer"
-         class="group relative flex items-center justify-center gap-3 bg-[#0070ba] hover:bg-[#005ea6] text-white px-8 py-4 rounded-2xl font-bold transition-all transform hover:scale-[1.02] active:scale-95 shadow-xl shadow-blue-500/20 w-full max-w-xs">
-        
-        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-            <path d="M20.067 8.478c.492.88.556 2.014.307 3.232-.401 1.954-1.604 3.398-3.61 3.398h-1.33c-.444 0-.813.333-.878.773l-1.03 7.025c-.075.509-.512.894-1.025.894h-3.213c-.462 0-.81-.425-.755-.884l.54-4.522c.065-.44.434-.773.878-.773h.584c2.257 0 4.108-1.503 4.545-3.63.14-.683.095-1.301-.122-1.782-.203-.45-.55-.805-1.042-1.063-.092-.048-.042-.187.06-.187h1.012c.797 0 1.54.401 2.079 1.118zM16.29 4.384c.412 1.332.13 2.893-.814 4.305-.913 1.366-2.428 2.222-4.148 2.222h-2.12c-.444 0-.813.333-.878.773l-1.03 7.025c-.075.509-.512.894-1.025.894H3.062c-.462 0-.81-.425-.755-.884l2.125-17.746c.07-.582.565-1.013 1.151-1.013h7.108c1.564 0 2.875.437 3.599 1.424z"/>
-        </svg>
-
-        <span>Pagar con PayPal</span>
-
-        <div class="absolute inset-0 rounded-2xl bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+  // OPCIÓN MINI (Para el encabezado/menú)
+  if (tipo === 'mini') {
+    return `
+      <a href="${paypalLink}" target="_blank" class="flex items-center gap-2 bg-[#0070ba] hover:bg-[#005ea6] text-white px-3 py-1.5 rounded-lg text-xs font-bold transition-all shadow-md">
+        <span>☕</span>
+        <span class="hidden sm:inline">Quitar Publicidad</span>
       </a>
-      
-      <span class="mt-4 text-[10px] text-slate-400 uppercase tracking-widest font-semibold">
-        Seguro • Rápido • Sin registro
-      </span>
+    `;
+  }
+
+  // OPCIÓN GRANDE (Para el final del examen)
+  return `
+    <div class="flex flex-col items-center justify-center my-10 p-8 bg-slate-50 dark:bg-slate-900/50 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-inner w-full">
+      <p class="text-sm text-slate-500 dark:text-slate-400 mb-5 font-medium text-center">
+        ¿Te ha servido para el examen? Invítame a un café para mantener la web.
+      </p>
+      <a href="${paypalLink}" target="_blank" class="flex items-center justify-center gap-3 bg-[#0070ba] hover:bg-[#005ea6] text-white px-8 py-4 rounded-2xl font-bold transition-all transform hover:scale-[1.02] shadow-xl w-full max-w-xs">
+        <span>Pagar con PayPal</span>
+      </a>
+      <span class="mt-4 text-[10px] text-slate-400 uppercase tracking-widest font-semibold">Seguro • Rápido • Sin registro</span>
     </div>
   `;
 }
