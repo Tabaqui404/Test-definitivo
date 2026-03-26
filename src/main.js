@@ -467,4 +467,11 @@ if (!localStorage.getItem('cookiesAceptadas')) {
     localStorage.setItem('cookiesAceptadas', 'true');
     banner.remove();
   });
+  window.addEventListener('beforeunload', function (e) {
+  // Solo avisar si el usuario está a mitad de un test (tendrías que tener una variable, por ejemplo 'examenIniciado')
+  if (typeof examenIniciado !== 'undefined' && examenIniciado) {
+    e.preventDefault();
+    e.returnValue = '';
+  }
+});
 }
